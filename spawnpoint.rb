@@ -26,6 +26,7 @@ gem "sass", "~> 3.4.9"
 gem "sass-rails"
 gem "puma", "~> 2.10"
 gem "foreman", require: false
+gem "jquery-rails"
 
 group :development do
   gem "spring"
@@ -69,6 +70,24 @@ file "app/views/layouts/application.html.haml", <<-HAML
     = yield
     = javascript_include_tag :application
 HAML
+
+# Default CSS & JS
+
+remove_file "app/assets/javascripts/application.js"
+file "app/assets/javascripts/application.js", <<-JAVASCRIPT
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
+
+// :)
+JAVASCRIPT
+
+remove_file "app/assets/stylesheets/application.css"
+file "app/assets/stylesheets/application.css.scss", <<-SASS
+@import "bourbon";
+
+// :)
+SASS
 
 # Dotenv & configuration files
 
