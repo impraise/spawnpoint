@@ -31,7 +31,6 @@ gem "jquery-rails"
 group :development do
   gem "spring"
   gem "quiet_assets"
-  gem "foreman", require: false
 end
 
 group :development, :test do
@@ -56,6 +55,31 @@ group :production, :staging do
   gem "rails_12factor"
 end
 RUBY
+
+
+# Rspec
+
+run "bundle install"
+generate "rspec:install"
+remove_dir "test"
+insert_into_file "spec/rails_helper.rb", "\nrequire 'shoulda/matchers'",
+                 after: "require 'rspec/rails'"
+
+
+prepend_to_file "spec/spec_helper.rb" do
+<<-RUBY
+
+# SimpleCov section added by spawnpoint
+if ENV["RUN_SIMPLECOV"]
+  require "simplecov"
+  puts "Running Simplecov"
+  SimpleCov.start "rails"
+end
+
+RUBY
+end
+
+append_to_file ".gitignore", "/coverage\n"
 
 # Default layout
 
