@@ -1,4 +1,4 @@
-# spawnpoint
+# spawnpoint [![Circle CI](https://circleci.com/gh/impraise/spawnpoint.svg?style=svg)](https://circleci.com/gh/impraise/spawnpoint)
 
 A minimalistic and opinionated starter template for your rails projects,
 based on our experience and requirements at [Impraise](http://www.impraise.com)
