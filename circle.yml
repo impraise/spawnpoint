@@ -1,6 +1,11 @@
 machine:
   ruby:
-    version: 2.1.3p242
+    version: 2.1.3
+
+dependencies:
+  override:
+    - gem install rails
+
 test:
   override:
     - make
