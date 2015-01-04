@@ -11,7 +11,7 @@ our experience and requirements at [Impraise](http://www.impraise.com)
 - Dotenv, an example .env file, and Dotenv-ready config files (`secrets.yml`, `database.yml`)
 - Foreman and example Procfile
 
-### Starting a new project with this template:
+### Starting a new project with spawnpoint:
 
 1. Start a new project, specifying a link to this template using the `-m` option
 
