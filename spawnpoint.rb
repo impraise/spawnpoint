@@ -51,5 +51,18 @@ group :production, :staging do
   gem "rack-timeout"
   gem "rails_12factor"
 end
-
 RUBY
+
+# Default layout
+
+remove_file "app/views/layouts/application.html.erb"
+file "app/views/layouts/application.html.haml", <<-HAML
+!!! 5
+%html
+  %head
+    %meta{charset: "utf-8"}
+    = stylesheet_link_tag :application
+  %body
+    = yield
+    = javascript_include_tag :application
+HAML
