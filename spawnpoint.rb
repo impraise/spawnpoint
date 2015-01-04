@@ -65,8 +65,10 @@ file "app/views/layouts/application.html.haml", <<-HAML
 %html
   %head
     %meta{charset: "utf-8"}
+    %title= page_title
+
     = stylesheet_link_tag :application
-  %body
+  %body{class: body_class}
     = yield
     = javascript_include_tag :application
 HAML
