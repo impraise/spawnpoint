@@ -3,7 +3,7 @@
 An opinionated starter template for your rails projects, based on
 our experience and requirements at [Impraise](http://www.impraise.com)
 
-### What's in the box?
+## What's in the box?
 
 - Rails 4.2.0, Spring (in development), Puma, Postgres
 - Sass, Bourbon, Flutie, Haml
@@ -11,7 +11,7 @@ our experience and requirements at [Impraise](http://www.impraise.com)
 - Dotenv, an example .env file, and Dotenv-ready config files (`secrets.yml`, `database.yml`)
 - Foreman and example Procfile
 
-### Starting a new project with spawnpoint:
+## Starting a new project with spawnpoint:
 
 1. Start a new project, specifying a link to this template using the `-m` option
 
@@ -22,7 +22,7 @@ our experience and requirements at [Impraise](http://www.impraise.com)
 2. Grab a cup of coffee while everything is set up
 3. You're good to go!
 
-### Testing
+## Testing
 
 (Temporary) - A `Makefile` is included with a simple shortcut to test the template
 by creating a new project under `build/`, simply run:
@@ -30,3 +30,10 @@ by creating a new project under `build/`, simply run:
 ```shell
 $ make
 ```
+
+## Credits
+
+**spawnpoint** is developed and maintained by [Impraise](http://www.impraise.com).
+Issue reports and pull requests are greatly appreciated!
+
+![Impraise, inc](http://i.imgur.com/x2oFA91.png)

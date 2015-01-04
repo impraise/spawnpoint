@@ -1,4 +1,4 @@
 all : clean
-		rails new build -m ./spawnpoint.rb
+	rails new build -m ./spawnpoint.rb
 clean:
-		rm -rf ./build
+	rm -rf ./build
