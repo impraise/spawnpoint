@@ -30,6 +30,7 @@ gem "foreman", require: false
 group :development do
   gem "spring"
   gem "quiet_assets"
+  gem "foreman", require: false
 end
 
 group :development, :test do
@@ -119,3 +120,27 @@ file "Procfile.dev.example", <<-YAML
 web: spring rails server
 YAML
 append_to_file ".gitignore", "/Procfile.dev\n"
+
+# Next steps message
+after_bundle do
+  puts <<-WHATNOW
+
+==============================================================================
+
+  Hurrah! Spawnpoint-generated project ready!
+
+  # What next?
+
+  - Take a look at the Gemfile to have an idea what you're working with
+  - Copy .env.example to .env and change the environment variables,
+    check out https://github.com/bkeepers/dotenv for help.
+  - Copy Procfile.dev.example to Procfile.dev and change to your liking
+  - Get started with: $ foreman start -f Procfile.dev
+
+  Built by @imfilp|gh/filp at impraise.com
+  https://github.com/impraise/spawnpoint
+
+==============================================================================
+
+  WHATNOW
+end
