@@ -20,6 +20,7 @@ gem "bcrypt-ruby", "3.1.5"
 gem "pg"
 gem "oj"
 gem "bourbon"
+gem "flutie"
 gem "haml-rails"
 gem "sass", "~> 3.4.9"
 gem "sass-rails"
@@ -35,6 +36,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "rspec-rails", "~> 3.1.0"
   gem "simplecov", require: false
+  gem "dotenv-rails"
 end
 
 group :development, :doc do
@@ -66,3 +68,54 @@ file "app/views/layouts/application.html.haml", <<-HAML
     = yield
     = javascript_include_tag :application
 HAML
+
+# Dotenv & configuration files
+
+file ".env.example", <<-SHELL
+SECRET_KEY_BASE=#{SecureRandom.hex(32)}
+DATABASE_HOST=localhost
+DATABASE_POOL_SIZE=5
+DATABASE_USERNAME=batman
+DATABASE_PASSWORD=hunter2
+DATABASE_NAME=coolproject
+TEST_DATABASE_NAME=coolproject_test
+SHELL
+append_to_file ".gitignore", "/.env\n"
+
+remove_file "config/secrets.yml"
+file "config/secrets.yml", <<-YAML
+# http://guides.rubyonrails.org/4_1_release_notes.html#config-secrets-yml
+development: &default
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+test:
+  <<: *default
+YAML
+
+remove_file "config/database.yml"
+file "config/database.yml", <<-YAML
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  host: <%= ENV["DATABASE_HOST"] %>
+  pool: <%= ENV["DATABASE_POOL_SIZE"] %>
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  database: <%= ENV["DATABASE_NAME"] %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: <%= ENV["TEST_DATABASE_NAME"] %>
+
+production:
+  <<: *default
+YAML
+
+# Foreman (Procfile)
+
+file "Procfile.dev.example", <<-YAML
+web: spring rails server
+YAML
+append_to_file ".gitignore", "/Procfile.dev\n"

@@ -3,6 +3,14 @@
 An opinionated starter template for your rails projects, based on
 our experience and requirements at [Impraise](http://www.impraise.com)
 
+### What's in the box?
+
+- Rails 4.2.0, Spring (in development), Puma, Postgres
+- Sass, Bourbon, Flutie, Haml
+- Rspec, Timecop, FactoryGirl, SimpleCov
+- Dotenv, an example .env file, and Dotenv-ready config files (`secrets.yml`, `database.yml`)
+- Foreman and example Procfile
+
 ### Starting a new project with this template:
 
 1. Start a new project, specifying a link to this template using the `-m` option
