@@ -1,7 +1,7 @@
 # spawnpoint
 
-An opinionated starter template for your rails projects, based on
-our experience and requirements at [Impraise](http://www.impraise.com)
+A minimalistic and opinionated starter template for your rails projects,
+based on our experience and requirements at [Impraise](http://www.impraise.com)
 
 ## What's in the box?
 
