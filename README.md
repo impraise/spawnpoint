@@ -13,3 +13,12 @@ our experience and requirements at [Impraise](http://www.impraise.com)
 
 2. Grab a cup of coffee while everything is set up
 3. You're good to go!
+
+### Testing
+
+(Temporary) - A `Makefile` is included with a simple shortcut to test the template
+by creating a new project under `build/`, simply run:
+
+```shell
+$ make
+```
