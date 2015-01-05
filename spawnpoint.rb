@@ -167,6 +167,7 @@ YAML
 append_to_file ".gitignore", "/Procfile.dev\n"
 
 # Next steps message
+
 after_bundle do
   puts <<-WHATNOW
 
@@ -182,7 +183,7 @@ after_bundle do
   - Copy Procfile.dev.example to Procfile.dev and change to your liking
   - Get started with: $ foreman start -f Procfile.dev
 
-  Built by @imfilp|gh/filp at impraise.com
+  Built at Impraise
   https://github.com/impraise/spawnpoint
 
 ==============================================================================
