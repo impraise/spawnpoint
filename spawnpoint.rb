@@ -110,7 +110,7 @@ file "app/assets/javascripts/application.js", <<-JAVASCRIPT
 JAVASCRIPT
 
 remove_file "app/assets/stylesheets/application.css"
-file "app/assets/stylesheets/application.css.scss", <<-SASS
+file "app/assets/stylesheets/application.scss", <<-SASS
 @import "bourbon";
 
 // :)
