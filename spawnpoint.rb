@@ -168,6 +168,13 @@ web: spring rails server
 YAML
 append_to_file ".gitignore", "/Procfile.dev\n"
 
+# Readme
+
+remove_file "README.rdoc"
+file "README.md", <<-MD
+# #{app_name}
+MD
+
 # Next steps message
 
 after_bundle do
