@@ -125,8 +125,8 @@ DATABASE_HOST=localhost
 DATABASE_POOL_SIZE=5
 DATABASE_USERNAME=batman
 DATABASE_PASSWORD=hunter2
-DATABASE_NAME=coolproject
-TEST_DATABASE_NAME=coolproject_test
+DATABASE_NAME=#{app_name}
+TEST_DATABASE_NAME=#{app_name}_test
 SHELL
 append_to_file ".gitignore", "/.env\n"
 
