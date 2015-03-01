@@ -170,6 +170,9 @@ append_to_file ".gitignore", "/Procfile.dev\n"
 # Next steps message
 
 after_bundle do
+  git :init
+  git add: "."
+
   puts <<-WHATNOW
 
 ==============================================================================
