@@ -170,24 +170,10 @@ append_to_file ".gitignore", "/Procfile.dev\n"
 
 # Readme
 
-remove_file "README.rdoc"
-file "README.md", <<-MD
-# #{app_name}
-MD
-
-# Next steps message
-
-after_bundle do
-  git :init
-  git add: "."
-
-  puts <<-WHATNOW
-
+post_install_instructions = <<-WHATNOW
 ==============================================================================
 
-  Hurrah! Spawnpoint-generated project ready!
-
-  # What next?
+  ## What next?
 
   - Take a look at the Gemfile to have an idea what you're working with
   - Copy .env.example to .env and change the environment variables,
@@ -197,8 +183,23 @@ after_bundle do
 
   Built at Impraise
   https://github.com/impraise/spawnpoint
+  https://www.impraise.com
 
 ==============================================================================
 
-  WHATNOW
+WHATNOW
+
+remove_file "README.rdoc"
+file "README.md", <<-MD
+# #{app_name}
+#{post_install_instructions}
+MD
+
+# Next steps message
+
+after_bundle do
+  git :init
+  git add: "."
+
+  puts post_install_instructions
 end
