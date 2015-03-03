@@ -125,7 +125,7 @@ DATABASE_HOST=localhost
 DATABASE_POOL_SIZE=5
 DATABASE_USERNAME=batman
 DATABASE_PASSWORD=hunter2
-DATABASE_NAME=#{app_name}
+DATABASE_NAME=#{app_name}_dev
 TEST_DATABASE_NAME=#{app_name}_test
 SHELL
 append_to_file ".gitignore", "/.env\n"
