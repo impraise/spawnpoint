@@ -14,17 +14,17 @@ file "Gemfile", <<-RUBY
 
 source "https://rubygems.org"
 
-gem "rails", "4.2.0"
-gem "bcrypt-ruby", "3.1.5"
+gem "rails", "4.2.1"
+gem "bcrypt", "3.1.10"
 
 gem "pg"
 gem "oj"
 gem "bourbon"
 gem "flutie"
 gem "haml-rails"
-gem "sass", "~> 3.4.9"
+gem "sass", "~> 3.4.14"
 gem "sass-rails"
-gem "puma", "~> 2.10"
+gem "puma", "~> 2.11.3"
 gem "foreman", require: false
 gem "jquery-rails"
 
@@ -48,7 +48,7 @@ group :development, :doc do
 end
 
 group :test do
-  gem "shoulda-matchers", "~> 2.7.0", require: false
+  gem "shoulda-matchers", "~> 2.8.0", require: false
   gem "timecop"
 end
 
