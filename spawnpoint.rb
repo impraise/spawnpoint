@@ -14,8 +14,8 @@ file "Gemfile", <<-RUBY
 
 source "https://rubygems.org"
 
-gem "rails", "4.2.1"
-gem "bcrypt", "3.1.10"
+gem "rails", "4.2.6"
+gem "bcrypt", "3.1.11"
 
 gem "pg"
 gem "oj"
@@ -24,7 +24,7 @@ gem "flutie"
 gem "haml-rails"
 gem "sass", "~> 3.4.14"
 gem "sass-rails"
-gem "puma", "~> 2.11.3"
+gem "puma", "~> 3.4.0"
 gem "foreman", require: false
 gem "jquery-rails"
 
@@ -37,7 +37,7 @@ end
 
 group :development, :test do
   gem "factory_girl_rails"
-  gem "rspec-rails", "~> 3.1.0"
+  gem "rspec-rails", "~> 3.4.2"
   gem "simplecov", require: false
   gem "dotenv-rails"
 end
@@ -48,7 +48,7 @@ group :development, :doc do
 end
 
 group :test do
-  gem "shoulda-matchers", "~> 2.8.0", require: false
+  gem "shoulda-matchers", "~> 3.1.1", require: false
   gem "timecop"
 end
 
